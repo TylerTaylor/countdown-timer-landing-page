@@ -1,0 +1,292 @@
+:root {
+  --grayish-blue: hsl(237, 18%, 59%);
+  --soft-red: hsl(345, 95%, 68%);
+  --white: hsl(0, 0%, 100%);
+  --dark-desaturated-blue: hsl(236, 21%, 26%);
+  --very-dark-blue: hsl(235, 16%, 14%);
+  --darkest-blue: hsl(234, 17%, 12%);
+  --purp: rgb(48, 37, 57);
+  --background-purp: rgb(33, 27, 41);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+.main-container {
+  height: 100vh;
+  /* background-color: var(--very-dark-blue); */
+  background-image: linear-gradient(var(--very-dark-blue), rgb(37, 29, 44) 55%);
+
+  /* background-color: black; */
+
+  /* first 4 args are the stars, linear-gradient is the actual BG color gradient */
+  background-image:
+  radial-gradient(var(--grayish-blue), rgba(255,255,255,.2) 2px, transparent 4px),
+  radial-gradient(var(--grayish-blue), rgba(255,255,255,.15) 1px, transparent 3px),
+  radial-gradient(var(--grayish-blue), rgba(255,255,255,.1) 2px, transparent 4px),
+  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 3px),
+  linear-gradient(var(--very-dark-blue), rgb(37, 29, 44) 55%);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 1000px 1000px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-bottom: 66px;
+  position: relative;
+  z-index: 1;
+}
+
+.main-container h1, h2 {
+  color: var(--white);
+  letter-spacing: .46em;
+  font-size: 1.4em;
+  font-weight: 700;
+
+  margin: 0;
+}
+
+/* .main-container .header {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.main-container .header {
+  display: flex;
+  align-items: center;
+}
+
+.main-container .header img {
+  height: 150px;
+  margin: 0;
+}
+
+.countdown-block {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 30px;
+  /* border: 1px solid hotpink; */
+  flex: 1;
+  margin-top: 60px;
+}
+
+.countdown-section {
+  width: 150px;
+  height: 183px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  text-align: center;
+  color: var(--grayish-blue);
+  text-transform: uppercase;
+}
+
+.countdown-section span {
+  letter-spacing: .55em;
+  font-size: .9em;
+}
+
+.counter-display {
+  height: 140px;
+  background-color: var(--dark-desaturated-blue);
+  color: var(--soft-red);
+  font-size: 5.8em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+
+  box-shadow: 0 10px 1px -1px var(--darkest-blue);
+}
+
+.social-links {
+  color: var(--grayish-blue);
+  z-index: 10;
+  margin-bottom: 0;
+}
+
+.social-links > * {
+  margin: 15px;
+  fill: var(--grayish-blue);
+}
+
+/* .social-links > .icon:hover {
+  fill: red;
+} */
+
+.social-links a svg:hover {
+  fill: var(--soft-red);
+  cursor: pointer;
+}
+
+.mountain-base {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 114px;
+  background-color: var(--purp);
+}
+
+.triangle-1 {
+  position: absolute;
+  bottom: 114px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 353px solid transparent; /* left triangle slant */
+  border-right: 135px solid transparent; /* right triangle slant */
+  border-bottom: 82px solid var(--purp);
+  line-height: 0;
+}
+
+.triangle-1::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: -10;
+  left: 0;
+  border-top: 57px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-left: 200px solid var(--darkest-blue);
+}
+
+.trapezoid-1 {
+  border-bottom: 40px solid var(--purp);
+  border-left: 70px solid transparent;
+  border-right: 80px solid transparent;
+  height: 0;
+  width: 550px;
+  position: absolute;
+  bottom: 114px;
+  left: 490px;
+  line-height: 0;
+}
+
+.trapezoid-1::after {
+  width: 0px;
+  height: 0;
+  border-left: 325px solid transparent;
+  border-right: 75px solid transparent;
+  border-bottom: 41px solid var(--purp);
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+}
+
+.trapezoid-1-shadow {
+  content: '';
+  position: absolute;
+  bottom: 25px;
+  right: 255px;
+  border-top: 71px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-left: 300px solid var(--darkest-blue);
+  z-index: -1;
+}
+
+.triangle-2 {
+  position: absolute;
+  bottom: 100px;
+  right: 205px;
+  width: 0;
+  height: 0;
+  border-left: 125px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 55px solid var(--purp);
+  line-height: 0;
+}
+
+.triangle-2::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+
+  left: 0;
+  border-top: 39px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-left: 220px solid var(--darkest-blue);
+}
+
+.triangle-3 {
+  position: absolute;
+  bottom: 114px;
+  right: -82px;
+  width: 0;
+  height: 0;
+  border-left: 240px solid transparent;
+  border-right: 130px solid transparent;
+  border-bottom: 83px solid var(--purp);
+  line-height: 0;
+}
+
+.triangle-3::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+
+  left: 0;
+  border-top: 39px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-left: 220px solid var(--darkest-blue);
+}
+
+.triangle-background-1 {
+  position: absolute;
+  bottom: 114px;
+  left: -153px;
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent; /* left triangle slant */
+  border-right: 385px solid transparent; /* right triangle slant */
+  /* border-bottom: 82px solid var(--very-dark-blue); */
+  border-bottom: 84px solid var(--background-purp);
+  line-height: 0;
+  z-index: -1;
+}
+
+.triangle-background-2 {
+  position: absolute;
+  bottom: 114px;
+  left: 304px;
+  width: 0;
+  height: 0;
+  border-left: 250px solid transparent; /* left triangle slant */
+  border-right: 1000px solid transparent; /* right triangle slant */
+  border-bottom: 83px solid var(--background-purp);
+  /* border-bottom: 83px solid white; */
+  line-height: 0;
+  z-index: -3;
+}
+
+.triangle-background-3 {
+  position: absolute;
+  bottom: 114px;
+  left: 846px;
+  width: 0;
+  height: 0;
+  border-left: 240px solid transparent; /* left triangle slant */
+  border-right: 600px solid transparent; /* right triangle slant */
+  border-bottom: 83px solid var(--background-purp);
+  /* border-bottom: 83px solid white; */
+  line-height: 0;
+  z-index: -3;
+}
